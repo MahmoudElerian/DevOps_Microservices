@@ -18,7 +18,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            ls
+            cd project-ml-microservice-kubernetes
             cat Makefile
             make setup
             make install
