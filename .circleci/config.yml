@@ -11,13 +11,15 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
-            - v1-dependencies-
+      # - restore_cache:
+      #     keys:
+      #       - v1-dependencies-{{ checksum "requirements.txt" }}
+      #       - v1-dependencies-
       - run:
           name: install dependencies
           command: |
+            ls
+            cat Makefile
             make setup
             make install
             pip3 install pylint
